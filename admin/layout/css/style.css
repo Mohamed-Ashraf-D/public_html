@@ -1,0 +1,477 @@
+/* body style */
+body {
+    background-color: #F4F4F4;
+}
+
+/*home page*/
+
+/*___homepage*/
+/*add style to astrix(*)*/
+.astrix {
+    font-size: 16px;
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    color: red;
+}
+
+/* login form style*/
+.btn-primary,
+.bg-primary {
+    background-color: #7386D5!important;
+}
+
+.login {
+    width: 300px;
+    margin: 100px auto;
+}
+
+.login .form-control {
+    margin-bottom: 10px;
+}
+
+/* End login form style*/
+/*Edit bootstrap navbar*/
+.form-group div{
+    position: relative;
+}
+
+.navbar>a,
+.nav-item>a {
+    color: #ffffff !important;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+
+.nav-item>a:hover {
+    background-color: #7386D5;
+}
+
+.dropdown-item {
+    background-color: #7386D5;
+    color: #ffffff;
+    width: 98%;
+    padding: 0.25rem 1.5rem;
+}
+
+.dropdown-menu {
+    top: 95%;
+    background-color: #7386D5;
+    border: 0;
+    border-radius: 0;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    background-color: #7386D5;
+}
+
+/*End Edit bootstrap navbar*/
+/*Start of Dashboard page*/
+.home-stats .stat {
+    padding: 20px;
+    font-size: 15px;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-stats .stat i {
+    font-size: 80px;
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    ;
+}
+
+.home-stats .stat .info {
+    float: right;
+}
+
+.home-stats .stat a {
+    color: white;
+}
+
+.home-stats .stat a:hover {
+    text-decoration: none;
+}
+
+.home-stats .stat span {
+    display: block;
+    font-size: 60px;
+}
+
+.latest {
+    margin-top: 30px;
+}
+
+.latest .toggle-info {
+    color: #999;
+    cursor: pointer;
+}
+
+.latest .toggle-info:hover {
+    color: #444;
+
+}
+
+.home-stats .st-members {
+    background-color: #7386D5;
+}
+.home-stats .st-connected-user{
+    background-color:#30bb1c;
+}
+
+.home-stats .st-pendin {
+    background-color: #8e44ad;
+}
+
+.home-stats .st-items {
+    background-color: #c0392b;
+}
+
+.home-stats .st-comments {
+    background-color: #e67e22;
+}
+
+.latest-users li {
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+.latest-users li:nth-child(odd) {
+    background-color: #eee;
+}
+
+.latest-comments .comment-box {
+    margin: 5px 0 10px;
+}
+
+.latest-comments .comment-box .user-c,
+.latest-comments .comment-box .user-n {
+    float: left;
+}
+
+.latest-comments .comment-box .user-n {
+    width: 80px;
+    text-align: center;
+    margin-right: 20px;
+    position: relative;
+    top: 10px;
+}
+
+.latest-comments .comment-box .user-c {
+    width: calc(100% - 100px);
+    background-color: #efefef;
+    padding: 10px;
+    position: relative;
+}
+
+.latest-comments .comment-box .user-c:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent #efefef transparent transparent;
+    border-width: 15px;
+
+}
+
+.btn-activ {
+    margin-right: 5px !important;
+}
+
+/*End of Dashboard page*/
+/*start of Members page style*/
+h1 {
+    font-size: 55px;
+    margin: 40px 0;
+    font-weight: bold;
+    color: #666;
+}
+
+/*global class*/
+.form-control {
+    position: relative;
+}
+
+/*show password eye style*/
+.show-pass {
+    position: absolute;
+    left: -8px;
+    top: 10px;
+}
+
+.main-table>thead:first-child {
+    background-color: #333;
+    color: white;
+}
+
+.table-responsive>.table-bordered {
+    box-shadow: 0 5.3px 21px #ccc;
+}
+
+/*End of Members page style*/
+/*Start category pge*/
+.categories ul li h3 {
+    margin: 0 0 10px;
+    cursor: pointer;
+}
+
+.cat:last-of-type~hr {
+    display: none;
+}
+
+.cat .visibility {
+    background-color: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+.cat .commenting {
+    background-color: #2c3e50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-left: 6px;
+}
+
+.cat .advertises {
+    background-color: #d35400;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-left: 6px;
+}
+
+.cat .btn-edit {
+    margin-left: 8px;
+}
+
+.cat .btn-del {
+    margin-left: 1px;
+
+}
+
+.cat .hidden-buttons {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    float: left;
+    margin-left: -167px;
+    margin-top: 10px;
+    ;
+}
+
+.cat {
+    overflow: hidden;
+}
+
+.cat:hover .hidden-buttons {
+    margin-left: 10px;
+}
+
+.cat:hover {
+    background-color: #EEE;
+}
+
+.borderd {
+    border: 1px solid #e2e0e0;
+}
+
+.option {
+    float: right;
+}
+
+.option a {
+    text-decoration: none;
+    color: gray;
+}
+
+.option span {
+    color: gray;
+    cursor: pointer;
+}
+
+.option .active {
+    color: red;
+    font-weight: bold;
+}
+
+.option span .active {
+    color: red;
+    font-weight: bold;
+
+}
+
+hr {
+    margin: 0 0;
+}
+
+.subcat {
+    color: black;
+    text-decoration: none;
+
+}
+
+.show-delete {
+    color: #f00;
+    display: none;
+}
+
+/*End category pge*/
+/* form controll */
+input {
+    margin: 3px;
+    position: relative;
+}
+
+[type=email],
+[type=number],
+[type=tel],
+[type=url] {
+
+    text-align: right !important;
+}
+/* check stars rating */
+.checked{
+    color: orange;
+}
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .navbar-nav {
+        width: 300px;
+    }
+    .home-stats .state {
+        margin-bottom: 3px;
+
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .navbar-nav {
+        width: 300px;
+    }
+    .home-stats .state {
+        margin-bottom: 3px;
+
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+    .navbar-nav {
+        width: 300px;
+    }
+    .home-stats .state {
+        margin-bottom: 3px;
+
+    }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+    .navbar-nav {
+        width: 300px;
+    }
+    .home-stats .state {
+        margin-bottom: 3px;
+
+    }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar-nav {
+        width: 300px;
+    }
+    .home-stats .stat {
+        margin-bottom: 10px;
+
+    }
+    
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar-nav {
+        width: 300px;
+    }
+    .home-stats .state {
+        margin-bottom: 3px;
+
+    }
+    body{
+        background-color: #8e44ad;
+    }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    .navbar-nav {
+        width: 300px;
+    }
+.home-stats .state {
+        margin-bottom: 5px;
+
+    }
+   
+}
+/* start of upload progress style */
+.progress {
+    background-color: #3fee8c;
+    position: relative;
+    margin: 20px;
+    height: 1.2rem;
+}
+.progress-bar {
+    background-color: #7eeed8;
+    width: 100%;
+    height: 1.2rem;
+}
+progress::-webkit-progress-value {
+    background: #3fee8c;
+}
+progress::-webkit-progress-bar {
+    background: #1e1e3c;
+}
+progress::-moz-progress-bar {
+    background: #3fee8c;
+}
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+}
+/* end upload style */
+
+.noclick{
+    pointer-events: none;
+}
+/* btn in td table pading */
+td > a{
+    margin: 5px;
+}
+
+td:last-child{
+    width:25%;
+}

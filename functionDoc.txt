@@ -1,0 +1,1 @@
+Function gatAllFrom($field,$table,$where=NULL,$orderBy,$ordering)
