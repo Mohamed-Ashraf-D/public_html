@@ -194,7 +194,7 @@
                                     $sum++;
                                 ?>
                                     <li class="<?= ($itemid == $c['item_ID']) ? 'selected' : 's' ?>">
-                                        <a href="items.php?itemid=<?= $c['item_ID'] ?>"> &nbsp;&nbsp;&nbsp;<?= " (" . $sum . ") " . $c['itemName'] ?></a>
+                                        <a href="items.php?itemid=<?= $c['item_ID'] ?>&&pageId=<?=$_GET['pageId']?>"> &nbsp;&nbsp;&nbsp;<?= " (" . $sum . ") " . $c['itemName'] ?></a>
                                     </li>
                                 <?php } ?>
                             </ul>
