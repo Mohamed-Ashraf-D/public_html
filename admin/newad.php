@@ -80,7 +80,7 @@ if (isset($_SESSION['mobileAdmin'])) {
             }
             if (empty($formError)) {
 
-                $pImage = rand(0, 1000000) . '_' . $imageName;
+                $pImage = $imageName;
                 $destination = 'layout/img/' . $pImage;
                 move_uploaded_file($imageTmp, $destination);
                 $stmt = $conn->prepare("INSERT INTO

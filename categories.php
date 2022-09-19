@@ -52,7 +52,7 @@ if (isset($_SESSION['user'])) {
                                 <div class="card card-body m-1" id="1" data-href="product_details.html">
                                     <?php
                                     if (empty($item['img'])) {
-                                        echo "<img alt='product-image' width='150' height='300' class='card-img-top' src='admin/layout/img/placeholder-profile-sq.jpg'>";
+                                        echo "<img alt='product-image' width='150' height='300' class='card-img-top' src='layout/img/default-image4.jpg'>";
                                     } else {
                                         echo "<img alt='product-image' width='150' height='300' class='card-img-top' src='admin/layout/img/{$item['img']}'>";
                                     }
