@@ -47,18 +47,13 @@ $sql4->execute();
 if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
     $condition="";
 }else{
-    $condition=" AND Cat_ID={$_SESSION['classID']}";
+    if(isset($_SESSION['user'])){
+    $condition=" AND Cat_ID={$_SESSION['classID']}";}
+
 }
-
 //select all data from items table according to user id
-$stmt = $conn->prepare("SELECT items.*,class.Name AS category_name,u.Username FROM items INNER JOIN class ON items.Cat_ID = class.ID INNER JOIN users u ON items.Member_ID = u.UserID WHERE item_ID=? {$condition}");
-// Execute query
-$stmt->execute(array($itemid));
-//fetch data and store in array
 
-$count = $stmt->rowCount();
-if ($count > 0) {
-    $item = $stmt->fetch();
+
 ?>
 
     <!--<h1 class="text-center">--><? //= $item['Name'] 
@@ -68,6 +63,14 @@ if ($count > 0) {
     <header>
         <div class="container-fluid">
         <?php if (isset($_SESSION['user'])) { 
+            $stmt = $conn->prepare("SELECT items.*,class.Name AS category_name,u.Username FROM items INNER JOIN class ON items.Cat_ID = class.ID INNER JOIN users u ON items.Member_ID = u.UserID WHERE item_ID=? {$condition}");
+            // Execute query
+            $stmt->execute(array($itemid));
+            //fetch data and store in array
+            
+            $count = $stmt->rowCount();
+            if ($count > 0) {
+                $item = $stmt->fetch();
                 ?>
                 <section style="margin-top:200px">
                     <div class="container m-auto">
@@ -243,6 +246,8 @@ if ($count > 0) {
 
             ?>
             <script>
+            
+
                 $(function() {
                     <?php
                     $stmtWatched = $conn->prepare("SELECT * FROM videomembership WHERE users=$userId && video=$itemid");
@@ -302,4 +307,51 @@ if ($count > 0) {
                 $(document).ready(function(){
    $('video').bind('contextmenu',function() { return false; });
 });
+
+$(document).ready(function(){
+
+    <?php if(!empty($item['videoCode'])){
+        ?>
+    var countDownDate = new Date().getTime() +1/12*60*60*1000;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+  console.log(now);
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("comment").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    $.ajax({
+                            method: 'POST',
+                            url: 'wwvideo.php',
+                            data: {
+                                'student': <?= $userId ?>,
+                                'video': <?= $itemid ?>
+                            },
+                            success: function(data) {
+                                console.log(data)
+
+                            }
+                        })
+  }
+}, 1000);
+<?php }?>
+});
+
             </script>
