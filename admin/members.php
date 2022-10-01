@@ -49,7 +49,7 @@ if (isset($_SESSION['mobileAdmin'])) {
                 $stmt->execute(array($subs_period, $endDate, $userid));
                 $theMsg = "<div class='alert alert-success'>تمت اضافة مدة الاشتراك </div>";
 
-                redirectHome($theMsg, 'back', 5);
+                redirectHome($theMsg, 'back', 1);
             }
         }
 
@@ -324,7 +324,7 @@ if (isset($_SESSION['mobileAdmin'])) {
                     $successMsg = "تم التسجيل بنجاح";
                     echo "<div class='container'>";
                     $theMsg = "<div class='alert alert-success'>" . $stmt->rowCount() . " تم التسجيل بنجاح</div>";
-                    redirectHome($theMsg, 'back', 5);
+                    redirectHome($theMsg, 'back', 1);
                     echo "</div>";
                 }
             }
@@ -489,7 +489,7 @@ if (isset($_SESSION['mobileAdmin'])) {
                     $stmt2->execute(array($name, $mobile, $father_mobile, $pass, $governorate, $class, $idu));
                     //echo success message
                     $theMsg = "<div class='alert alert-success'>" . $stmt2->rowCount() . " records update successfully</div>";
-                    redirectHome($theMsg, 'back', 3);
+                    redirectHome($theMsg, 'back', 1);
                 }
             }
         } else {
@@ -514,7 +514,7 @@ if (isset($_SESSION['mobileAdmin'])) {
             $stmt->bindParam('userid', $userid);
             $stmt->execute();
             $theMsg = "<div class='alert alert-success'>" . $stmt->rowCount() . " records deleted successfully</div>";
-            redirectHome($theMsg, 'back', 5);
+            redirectHome($theMsg, 'back', 1);
         } else {
 
             $theMsg = "<div class='alert alert-danger'>this user not exist</div>";
@@ -540,7 +540,7 @@ if (isset($_SESSION['mobileAdmin'])) {
             $stmt = $conn->prepare('INSERT into users');
 
             $theMsg = "<div class='alert alert-success'>" . $stmt->rowCount() . " records Updated successfully</div>";
-            redirectHome($theMsg, 'back', 5);
+            redirectHome($theMsg, 'back', 1);
         } else {
 
             $theMsg = "<div class='alert alert-danger'>this user not exist</div>";
