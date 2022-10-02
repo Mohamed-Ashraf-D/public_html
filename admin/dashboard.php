@@ -9,7 +9,7 @@ if(isset($_SESSION['mobileAdmin'])){
     $theLatestUsers=getLatestu('*','users','UserID','GroupID',1,$NumUser);
     $NumItems=5;
     $LatestItems=getLatest('*','items','Item_ID',$NumItems);
-    $numComments=4;
+    $numComments=10;
 
 ?>
     <!--Start Dashboard page -->
@@ -38,24 +38,24 @@ if(isset($_SESSION['mobileAdmin'])){
                                 
                                 $session=session_id();
                                 $time=time();
-                                $time_check=$time-7200;
+                                $time_check=$time-1800;
                                 $tbl_name="status";
                                 
                                 $stmtC=$conn->prepare("SELECT * FROM $tbl_name WHERE session='$session'");
                                 $stmtC->execute();
                                 $count=$stmtC->rowCount();
                                 if($count=="0"){
-                                $sql1=$conn->prepare("INSERT INTO $tbl_name(session, time)VALUES('$session', '$time')");
+                                $sql1=$conn->prepare("INSERT INTO $tbl_name(session, time,user_id)VALUES('$session', '$time','{$_SESSION['ID']}')");
                                 $sql1->execute();
                                 }
                                 else {
-                                $sql2=$conn->prepare("UPDATE $tbl_name SET time='$time' WHERE session = '$session'");
+                                $sql2=$conn->prepare("UPDATE $tbl_name SET time='$time', user_id={$_SESSION['ID']} WHERE session = '$session'  ");
                                 $sql2->execute();
                                 }
                                 $sql3=$conn->prepare("SELECT * FROM $tbl_name");
                                 $sql3->execute();
                                 $sql3C=$sql3->rowCount();
-                                echo  $sql3C ;
+                                echo  $sql3C-1 ;
                                 $sql4=$conn->prepare("DELETE FROM $tbl_name WHERE time<$time_check");
                                 $sql4->execute(); 
                             ?></span>

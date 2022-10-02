@@ -4,7 +4,7 @@ echo $session;
 if ($handle = opendir($session)) {
     $sum=0;
     foreach (glob("$session/sess_*") as $filename) {
-      if (filemtime($filename) + 3600 < time()) {
+      if (filemtime($filename) + 1800 < time()) {
         @unlink($filename);
         
         
@@ -18,3 +18,5 @@ if ($handle = opendir($session)) {
     }else{
         echo "not open;";
     }
+
+    

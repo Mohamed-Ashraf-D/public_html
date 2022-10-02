@@ -4,7 +4,7 @@
 
                                 $session=session_id();
                                 $time=time();
-                                $time_check=$time-7200;
+                                $time_check=$time-1800;
                                 $tbl_name="status";
                                 
                                 $stmtC=$conn->prepare("SELECT * FROM $tbl_name WHERE session='$session'");

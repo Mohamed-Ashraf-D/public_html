@@ -15,7 +15,7 @@ if (isset($_SESSION['user'])) {
     $stmtC->execute();
     $count = $stmtC->rowCount();
     if ($count == "0") {
-        $sql1 = $conn->prepare("INSERT INTO $tbl_name(session, time)VALUES('$session', '$time')");
+        $sql1 = $conn->prepare("INSERT INTO $tbl_name(session, time,user_id)VALUES('$session', '$time',{$_SESSION['uid']})");
         $sql1->execute();
     } else {
         $sql2 = $conn->prepare("UPDATE $tbl_name SET time='$time' WHERE session = '$session'");

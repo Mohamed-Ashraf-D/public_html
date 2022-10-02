@@ -76,13 +76,13 @@ INNER JOIN users ON users.UserID=items.Member_ID ORDER BY item_ID DESC ");
                         </table>
                     <?php } ?>
                 </div>
-                <a href='newad.php?do=Add' class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> new item</a>
+                <a href='newad.php?do=Add' class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> اضافة درس جديد</a>
             </div>
             <br><br><br><br><br>
         <?php } else {
             echo "<div class='container'>";
             echo "<div class='alert alert-info'>there's is no items</div>";
-            echo '<a href="newad.php?do=Add" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> new item</a>
+            echo '<a href="newad.php?do=Add" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> اضافة درس جديد</a>
 ';
             echo "</div>";
         }
